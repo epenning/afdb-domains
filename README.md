@@ -6,6 +6,8 @@ These are some basic scripts for retrieving data from the AFDB and Uniprot.
 
 A file `uniprot_ids.txt` file is expected to contain the Uniprot IDs to process, one on each line.
 
+An example input `uniprot_ids.txt` is included in this repository.
+
 ## Download AFDB Structures
 
 ```shell
@@ -21,6 +23,8 @@ based on the location in AlphaFold DB, it downloads the following files into the
 * `<id>_PAE.png` - an image of the PAE of the predicted structure
 * `<id>_summary.json` - the 3D Beacons query response, containing the URL used for the AlphaFold DB 
                         downloads
+
+Example output is in the folder `afdb`.
 
 IDs for which all of these files already exist will be skipped.
 
@@ -49,6 +53,8 @@ exist):
 
 * `<id>.gff` - the UniProt features file
 
+Example output is in the folder `features`.
+
 IDs for which this file already exists will be skipped.
 
 Any IDs which could not be downloaded, either due to the file not being available or connection 
@@ -68,6 +74,8 @@ python3 get_domains_from_gff.py
 This extracts just the domains out of the `<id>.gff` features in `features` for each ID in 
 `uniprot_ids.txt`. It produces the following files into the folder `domains`:
 * `<id>.gff` - the UniProt features file containing just domains
+
+Example output is in the folder `domains`.
 
 The `bcbio-gff` package is required:
 
