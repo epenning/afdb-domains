@@ -1,0 +1,6 @@
+##gff-version 3
+##sequence-region P05067 1 565
+P05067	annotation	remark	1	565	.	.	.	gff-version=3;sequence-region=%28%27P05067%27%2C 0%2C 770%29
+P05067	UniProtKB	Domain	28	189	.	.	.	Note=E1;Ontology_term=ECO:0000255;evidence=ECO:0000255%7CPROSITE-ProRule:PRU01217
+P05067	UniProtKB	Domain	291	341	.	.	.	Note=BPTI/Kunitz inhibitor;Ontology_term=ECO:0000255;evidence=ECO:0000255%7CPROSITE-ProRule:PRU00031
+P05067	UniProtKB	Domain	374	565	.	.	.	Note=E2;Ontology_term=ECO:0000255;evidence=ECO:0000255%7CPROSITE-ProRule:PRU01218

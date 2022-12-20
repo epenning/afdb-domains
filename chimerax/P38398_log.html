@@ -1,0 +1,73 @@
+<html>
+<head>
+<meta charset='utf-8'>
+<title> ChimeraX Log </title>
+<script type="text/javascript">
+window.onload = function() {
+  cxlinks_base="http://www.rbvi.ucsf.edu/chimerax/docs/"
+  if(!window.navigator.userAgent.includes("ChimeraX")){
+    window.onclick = function(e){
+      if(e.target.tagName.toLowerCase()!="a")
+	return true;
+      var url=e.target.getAttribute("href").toLowerCase();
+      if(url.startsWith("help:")){
+	window.location.href = cxlinks_base + url.substring(5);
+	return false;
+      }
+      if(url.startsWith("cxcmd:")){
+	alert("This link only works in a ChimeraX browser and would execute a command.");
+	return false;
+      }
+      return true;
+    }
+    var ls=document.links;
+    for(var i=0;i<ls.length;i++){
+      var link=ls[i];
+      var url=link.getAttribute("href").toLowerCase();
+      if(url.startsWith("cxcmd:"))
+	link.style.color="darkred";
+    }
+  }
+};
+</script>
+</head>
+<h1> ChimeraX Log </h1>
+<style>
+
+.cxcmd {
+    display: block;
+    font-weight: bold;
+    margin-top: .5em;
+    background-color: #ddd;
+}
+a.no_underline {
+    text-decoration: none;
+}
+
+.cxcmd_as_doc {
+    display: inline;
+}
+.cxcmd_as_cmd {
+    display: none;
+}
+</style>
+<div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/open.html">open</a> afdb/P38398.cif</div><div class="cxcmd_as_cmd"><a href="cxcmd:open afdb/P38398.cif">open afdb/P38398.cif</a></div></div><table border=1 cellpadding=4 cellspacing=0>
+  <thead>
+    <tr>
+      <th colspan="3">Chain information for P38398.cif #1</th>
+    </tr>
+    <tr>
+      <th>Chain</th>
+      <th>Description</th>
+      <th>UniProt</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align:center"><a title="Select chain" href="cxcmd:select /A:1-1863">A</a></td>
+      <td><a title="Show sequence" href="cxcmd:sequence chain #1/A">Breast cancer type 1 susceptibility protein</a></td>
+      <td style="text-align:center"><a title="Show annotations" href="cxcmd:open P38398 from uniprot">BRCA1_HUMAN</a></td>
+    </tr>
+  </tbody>
+</table><br/><div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/color.html">color</a> white</div><div class="cxcmd_as_cmd"><a href="cxcmd:color white">color white</a></div></div><div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/color.html">color</a> #1:1641-1736 #0173b2</div><div class="cxcmd_as_cmd"><a href="cxcmd:color #1:1641-1736 #0173b2">color #1:1641-1736 #0173b2</a></div></div><div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/color.html">color</a> #1:1755-1855 #de8f05</div><div class="cxcmd_as_cmd"><a href="cxcmd:color #1:1755-1855 #de8f05">color #1:1755-1855 #de8f05</a></div></div><div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/set.html">set</a> bgColor white</div><div class="cxcmd_as_cmd"><a href="cxcmd:set bgColor white">set bgColor white</a></div></div><div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/lighting.html">lighting</a> soft depthCue false</div><div class="cxcmd_as_cmd"><a href="cxcmd:lighting soft depthCue false">lighting soft depthCue false</a></div></div><div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/lighting.html#model">lighting model</a> #3 directional false shadows false</div><div class="cxcmd_as_cmd"><a href="cxcmd:lighting model #3 directional false shadows false">lighting model #3 directional false shadows false</a></div></div><div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/graphics.html#silhouettes">graphics silhouettes</a> true width 2</div><div class="cxcmd_as_cmd"><a href="cxcmd:graphics silhouettes true width 2">graphics silhouettes true width 2</a></div></div><div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/view.html">view</a> clip false</div><div class="cxcmd_as_cmd"><a href="cxcmd:view clip false">view clip false</a></div></div><div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/save.html">save</a> chimerax/P38398.png supersample 3</div><div class="cxcmd_as_cmd"><a href="cxcmd:save chimerax/P38398.png supersample 3">save chimerax/P38398.png supersample 3</a></div></div><div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/save.html">save</a> chimerax/P38398.cxs format session</div><div class="cxcmd_as_cmd"><a href="cxcmd:save chimerax/P38398.cxs format session">save chimerax/P38398.cxs format session</a></div></div><div class="cxcmd"><div class="cxcmd_as_doc"><a href="help:user/commands/log.html#save">log save</a> chimerax/P38398_log.html</div><div class="cxcmd_as_cmd"><a href="cxcmd:log save chimerax/P38398_log.html">log save chimerax/P38398_log.html</a></div></div></body>
+</html>

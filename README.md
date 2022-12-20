@@ -79,7 +79,7 @@ Example output is in the folder `domains`.
 
 The `bcbio-gff` package is required:
 
-```
+```shell
 pip install bcbio-gff
 ```
 
@@ -87,3 +87,40 @@ pip install bcbio-gff
 * `ids_filename` - use a different ID input file than `uniprot_ids.txt`
 * `features_dir` - use a different input features directory than `features`
 * `domains_dir` - save domain feature files to a different directory than `domains`
+
+## Render AF Structure with Domains in ChimeraX
+
+This creates ChimeraX sessions and saves snapshots for each ID in `uniprot_ids.txt`, with domains
+colored based on provided `.gff` files.
+
+1. Configure variables in `render_domains_chimerax.py`for your use case based on its comments
+2. Open ChimeraX
+3. (If not already done) Install Seaborn and BCBio GFF in ChimeraX
+    - In the "Command" prompt, type `pip install seaborn` and hit enter
+    - In the "Command" prompt, type `pip install bcbio-gff` and hit enter
+    - It may freeze up for a moment each time, and then display the installation in the log
+    - This must only be done once per install of ChimeraX
+4. Set ChimeraX working directory to this directory (afdb-domains)
+    - File -> Set Working Folder... -> Select this folder
+    - This must be done every time ChimeraX is restarted
+5. Adjust your 3D view pane to the desired size
+    - Snapshots are taken at the current size of your ChimeraX view, supersampled x3 for detail
+6. Run the Python script from within ChimeraX
+    - File -> Open... -> Select `render_domains_chimerax.py`
+    - It will run immediately, showing current commands in the status bar
+    - If an error occurs, a popup will show, execution will stop, and you may need to debug your
+      script
+    - After completion, the last protein session will still be open
+
+It produces the following files into the folder `chimerax`:
+* `<id>.cxs` - the ChimeraX session with the structure loaded and domains colored
+* `<id>.png` - the x3 supersampled snapshot taken from ChimeraX
+* `<id>_log.html` - the ChimeraX log for the session
+
+Example output is in the folder `chimerax`.
+
+IDs for which an error occurs during execution will be skipped. This includes proteins for which no 
+domains were found.
+
+Any IDs which ad an error will be written to a new file, one ID per line, with the filename:
+`error_rendering_chimerax-YYYY_MM-DD-HH_MM_SS_[A|P]M.txt`
